@@ -1,0 +1,27 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+      args:
+        - VITE_API_URL=http://localhost:3001/api  # full URL, no nginx locally
+    ports:
+      - "3000:3000"
+
+  api:
+    build:
+      context: ../taskr-backend
+      dockerfile: Dockerfile
+      target: production
+    ports:
+      - "3001:3001"
+    volumes:
+      - taskr-data:/data
+    environment:
+      - NODE_ENV=production
+      - DB_PATH=/data/db.json
+      - CORS_ORIGIN=http://localhost:3000
+
+volumes:
+  taskr-data:

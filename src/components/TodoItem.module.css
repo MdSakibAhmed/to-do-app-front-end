@@ -1,0 +1,159 @@
+.item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 13px 14px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.2s, background 0.2s, opacity 0.25s;
+  animation: slideIn 0.25s ease;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.item:hover {
+  border-color: var(--surface2);
+  background: var(--surface2);
+}
+
+.item:hover .actions {
+  opacity: 1;
+}
+
+.completed {
+  opacity: 0.45;
+}
+
+.editing {
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 3px var(--accent-dim);
+}
+
+.priorityBar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--priority-color);
+  border-radius: 4px 0 0 4px;
+}
+
+.checkbox {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  border-radius: 6px;
+  border: 1.5px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s;
+  color: white;
+}
+
+.checkbox:hover {
+  border-color: var(--green);
+  background: var(--green-dim);
+}
+
+.checked {
+  background: var(--green);
+  border-color: var(--green);
+}
+
+.checked:hover {
+  background: #35c876;
+  border-color: #35c876;
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
+}
+
+.text {
+  font-size: 0.875rem;
+  font-family: var(--font-mono);
+  color: var(--text);
+  letter-spacing: 0.01em;
+  cursor: default;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.completed .text {
+  text-decoration: line-through;
+  color: var(--text-muted);
+}
+
+.editInput {
+  width: 100%;
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--text);
+  font-size: 0.875rem;
+  font-family: var(--font-mono);
+  letter-spacing: 0.01em;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  opacity: 0;
+  transition: opacity 0.15s;
+  flex-shrink: 0;
+}
+
+.item:hover .actions,
+.editing .actions {
+  opacity: 1;
+}
+
+.priority {
+  font-size: 0.65rem;
+  font-family: var(--font-mono);
+  font-weight: 500;
+  color: var(--text-muted);
+  padding: 2px 5px;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  letter-spacing: 0.05em;
+  transition: color 0.15s;
+}
+
+.priority:hover {
+  border-color: currentColor;
+}
+
+.editBtn,
+.deleteBtn {
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  color: var(--text-muted);
+  transition: color 0.15s, background 0.15s;
+}
+
+.editBtn:hover {
+  color: var(--accent);
+  background: var(--accent-dim);
+}
+
+.deleteBtn:hover {
+  color: #ff4444;
+  background: rgba(255, 68, 68, 0.1);
+}

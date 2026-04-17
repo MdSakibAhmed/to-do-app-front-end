@@ -1,0 +1,67 @@
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.filters {
+  display: flex;
+  gap: 4px;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 4px;
+}
+
+.filter {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-family: var(--font-mono);
+  font-weight: 400;
+  color: var(--text-muted);
+  text-transform: lowercase;
+  letter-spacing: 0.02em;
+  transition: color 0.15s, background 0.15s;
+}
+
+.filter:hover {
+  color: var(--text);
+}
+
+.active {
+  background: var(--surface2);
+  color: var(--text);
+}
+
+.badge {
+  font-size: 0.65rem;
+  background: var(--accent);
+  color: white;
+  border-radius: 10px;
+  padding: 1px 5px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.done {
+  background: var(--green);
+}
+
+.clear {
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.15s;
+  letter-spacing: 0.01em;
+}
+
+.clear:hover {
+  color: #ff4444;
+}
