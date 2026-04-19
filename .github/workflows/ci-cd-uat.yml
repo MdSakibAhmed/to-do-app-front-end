@@ -49,8 +49,9 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v4
         with:
-          context: .
+          context: .       
           push: true
+          file: ./Dockerfile.stage
           platforms: linux/amd64
           tags: |
             ${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
